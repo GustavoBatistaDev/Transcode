@@ -4,7 +4,6 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
- 
 }
 
 html{
@@ -89,12 +88,12 @@ body{
 
 /* main-intro */
 
-.one{display: block;}
+.onee{display: block;}
 .twoo{display: none;}
 
 
 @media(max-width: 650px){
-.onee{display: none;}
+    .onee{display: none;}
 .twoo{display: block;}
 
 }
@@ -768,11 +767,15 @@ body{
 
 /* Adicione esses estilos ao seu arquivo CSS */
 .hidden {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-out, transform 0.5s ease-out;
 }
 
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 
@@ -860,8 +863,7 @@ svg{
  animation: estrelaCadente 2s linear infinite; /* 5s de duração, linear timing, repetição infinita */
 }
 
-
-@media(max-width:370px){
+@media(max-width: 370px){
     .input{
         width: 190px;
     }

@@ -34,6 +34,10 @@
         </nav>
     </header>
     <main id="main-intro" class="main-intro">  
+      
+       
+
+
         <svg class="onee" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame 35">
             <g id="Elementos " clip-path="url(#clip0_89_762)">
@@ -286,6 +290,7 @@
             </defs>
         </svg>
 
+        
        <svg class="twoo" width="709" height="1024" viewBox="0 0 709 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Frame 34" clip-path="url(#clip0_88_751)">
 <rect width="708.67" height="1024" fill="#000421"/>
@@ -462,9 +467,11 @@
 <rect width="708.67" height="1024" fill="white"/>
 </clipPath>
 </defs>
-</svg>
+       </svg>
 
-        
+
+
+
         <div class="container-content">
                 <h1 class="main-title hidden">Transcode</h1>
                 <p class="main-para hidden">
@@ -805,7 +812,7 @@
         
         <h1 style="text-align: center; "><span class="gradient hidden">Orçamento</span></h1>
         <h1 style="text-align: center; " class="title-section3 hidden">Vamos criar algo <span class="gradient"> incrível</span> ?</h1>
-        <p style="margin-bottom: 32px ;" class="para-card hidden">
+        <p style="margin: 8px 0;" class="para-card hidden">
             Deixe seu email para entrarmos em contato       
         </p>
         <div class="container-form">
@@ -853,7 +860,42 @@
 
 </body>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Função para verificar se um elemento está visível na tela
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
 
+        // Função para adicionar ou remover a classe com base na direção da rolagem
+        function handleScrollAnimation() {
+            var elements = document.querySelectorAll(".hidden");
+
+            elements.forEach(function (element) {
+                var isElementVisible = isElementInViewport(element);
+
+                // Adiciona ou remove a classe 'visible' com base na direção da rolagem
+                if (isElementVisible && !element.classList.contains("visible")) {
+                    element.classList.add("visible");
+                } else if (!isElementVisible && element.classList.contains("visible")) {
+                    element.classList.remove("visible");
+                }
+            });
+        }
+
+        // Adiciona um evento de rolagem que chama a função de animação
+        window.addEventListener("scroll", handleScrollAnimation);
+
+        // Chama a função pela primeira vez para animar elementos inicialmente visíveis
+        handleScrollAnimation();
+    });
+</script>
 
 
 </html>
