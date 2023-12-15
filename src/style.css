@@ -772,6 +772,10 @@ body{
 
 }
 
+a#logo {
+    display: none !important;
+}
+
 .visible {
     opacity: 1;
     transform: translateY(0);

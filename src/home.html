@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" integrity="sha512-LQQDtPAueBcmGXKdOBcMkrhrtqM7xR2bVrnMtYZ8ImAZhFlIb5xrMqQ6uZviyeSB+4mYj89ta8niiCIQM1Gj0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -550,7 +551,7 @@
     </svg>
         <div class="col-1 ">
         <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.522/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/2eVJhGUJJFVCctzS/scene.splinecode"></spline-viewer>
+        <spline-viewer  url="https://prod.spline.design/2eVJhGUJJFVCctzS/scene.splinecode"></spline-viewer>
         </div>
         <div class="col-2 trigger" id="description">
             <div   class="box-titles">
@@ -558,7 +559,7 @@
                 <h1 class="gradient two hidden trigger-x">Front end</h1>
                 <h1 class="gradient three hidden trigger-x">Back end</h1>
             </div>
-            <p class="about hidden trigger-x">
+            <p class="about trigger-x">
                 A Transcode concentra-se no desenvolvimento de
                 landing pages, sistemas e sites institucionais, com o objetivo
                 de proporcionar experiências digitais excepcionais 
@@ -684,19 +685,19 @@
             <div class="col-2-professional">
                 <div class="grid-items">
                     <div class="item item1"> 
-                        <h3 class="title-item hidden"><span class="gradient">+46</span></h3>
+                        <h3 class="title-item hidden"><span class="gradient">+30</span></h3>
                         <span class="descrip hidden">Projetos Frontend</span>
                     </div>
                     <div class="item item2"> 
-                        <h3 class="title-item hidden"><span class="gradient">+22</span></h3>
+                        <h3 class="title-item hidden"><span class="gradient">+20</span></h3>
                         <span class="descrip hidden">Projetos Backend</span>
                     </div>
                     <div class="item item3"> 
-                        <h3 class="title-item hidden"><span class="gradient">+54</span></h3>
+                        <h3 class="title-item hidden"><span class="gradient">+40</span></h3>
                         <span class="descrip hidden">UI/UX</span>
                     </div>
                     <div class="item item4"> 
-                        <h3 class="title-item hidden"><span class="gradient">+122</span></h3>
+                        <h3 class="title-item hidden"><span class="gradient">+50</span></h3>
                         <span class="descrip hidden">Copys</span>
                     </div>
                 </div>
@@ -812,8 +813,8 @@
             Deixe seu email para entrarmos em contato       
         </p>
         <div class="container-form">
-            <form action="" class="form">
-                <input type="text" placeholder="Endereço de email..." class="input">
+            <form  action="" class="form" id="form">
+                <input type="text" placeholder="Endereço de email..." name="email" class="input">
                 <input autocomplete="off"  type="submit" value="Enviar" class="Budget-form">
             </form>
         </div>
@@ -826,7 +827,7 @@
          <div class="col-footer2">
             <div>
               <span  class="span-footer">Transcode®</span>
-              <span  class="span-footer" >Criado por: Gustavo Batista</span> 
+              <span  class="span-footer" >Copyright 2023 - Gustavo Pereira Batista</span> 
               <span  class="span-footer" >CNPJ: 000.000.000-00</span>
             </div>
          </div>
@@ -849,44 +850,46 @@
             </button>
            </div>
     </footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
-   const mainTitle = document.querySelectorAll('.trigger-top');
+    const mainTitle = document.querySelectorAll('.trigger-top');
     const elements = document.querySelectorAll('.trigger-x');
     const elements2 = document.querySelectorAll('.trigger-x2');
 
-   gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-   gsap.fromTo(mainTitle, {
+    gsap.fromTo(mainTitle, {
         y: 60,
         duration: 2,
         scrollTrigger: '.trigger-top',
         scrub: 3
         
-   }, {
-     y: 0,
+    }, {
+        y: 0,
         duration: 2,
-   })
+    })
 
     gsap.fromTo(mainTitle, {
         opacity: 0,
         duration: 2,
-       
         
-   }, {
-      opacity: 1,
+        
+    }, {
+        opacity: 1,
         duration: 2,
-   })
+    })
 
     // other elements
 
-ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-// Recarregue a animação
-gsap.fromTo(elements, {
+    // Recarregue a animação
+    gsap.fromTo(elements, {
     y: 60,
     opacity: 0,
     duration: 4,
-}, {
+    }, {
     y: 0,   
     opacity: 1,
     duration: 4,
@@ -895,10 +898,42 @@ gsap.fromTo(elements, {
         once: false,
         toggleActions: 'restart none none none', // Reinicia a animação quando o elemento entra na tela
     },
-});
+    });
 
+</script>
 
+<script>
+
+  
+    const form = document.querySelector('#form');
     
+    const sendMail = (event) => {
+
+        event.preventDefault();
+        
+        const email = document.querySelector('.input').value;
+      
+
+        Toastify({
+        text: "Email enviado.",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "linear-gradient(to right, #1242BE, #1242CD)",
+    },
+
+    }).showToast();
+
+    form.reset()
+    };
+
+    form.addEventListener('submit', sendMail)
+
 </script>
 </body>
 
