@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item">
                      <button class="Budget-contact">
-                        Orçamento
+                        WhatsApp
                     </button>   
                 </li>
             </ul>
@@ -807,14 +807,14 @@
     <hr   style="width: 50%; display: flex; justify-content: center; margin: 0 auto;">
     <section class="four  trigger-x">
         
-        <h1 style="text-align: center; "><span class="gradient hidden">Orçamento</span></h1>
+        <h1 style="text-align: center; "><span class="gradient hidden">Parcerias</span></h1>
         <h1 style="text-align: center; " class="title-section3 hidden">Vamos criar algo <span class="gradient"> incrível</span> ?</h1>
         <p style="margin: 8px 0;" class="para-card hidden">
-            Deixe seu email para entrarmos em contato       
+            Deseja uma parceria? deixe seu email para entrarmos em contato.     
         </p>
         <div class="container-form">
             <form  action="" class="form" id="form">
-                <input type="text" placeholder="Endereço de email..." name="email" class="input">
+                <input type=" " placeholder="Endereço de email..." name="email" class="input">
                 <input autocomplete="off"  type="submit" value="Enviar" class="Budget-form">
             </form>
         </div>
@@ -904,15 +904,28 @@
 
 <script>
 
-  
-    const form = document.querySelector('#form');
-    
-    const sendMail = (event) => {
+const form = document.querySelector('#form');
 
-        event.preventDefault();
-        
-        const email = document.querySelector('.input').value;
-      
+    const sendMail = async (event) => {
+    event.preventDefault();
+
+    const email = document.querySelector('.input').value;
+
+    try {
+        // Envolva o email em um objeto com uma propriedade específica
+        const data = { email_destination: email };
+
+        const response = await fetch("http://localhost:3000/send-email", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Outros cabeçalhos, se necessário
+        },
+        body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        console.log('Resposta do servidor:', result);
 
         Toastify({
         text: "Email enviado.",
@@ -920,19 +933,22 @@
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
         style: {
-        background: "linear-gradient(to right, #1242BE, #1242CD)",
-    },
-
-    }).showToast();
-
-    form.reset()
+            background: "linear-gradient(to right, #1242BE, #1242CD)",
+        },
+        }).showToast();
+    } catch (error) {
+        console.error('Erro ao fazer a solicitação:', error.message);
+    } finally {
+        form.reset();
+    }
     };
 
-    form.addEventListener('submit', sendMail)
+form.addEventListener('submit', sendMail);
+
 
 </script>
 </body>
