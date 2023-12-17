@@ -236,6 +236,10 @@ body{
         font-size: 16px;
         transition: 1s ease-in-out;
     }
+
+    .para-card {
+        text-align: center;
+    }
 }
 
 /* fim media queries */
