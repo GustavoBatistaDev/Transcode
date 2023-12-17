@@ -93,7 +93,7 @@ body{
 .twoo{display: none;}
 
 
-@media(max-width: 650px){
+@media(max-width: 450px){
     .onee{display: none;}
 .twoo{display: block;}
 
@@ -202,6 +202,10 @@ body{
 
 }
 
+.para-card-newsletter{
+    color: darkgray;
+  font-family: 'Oxanium', sans-serif; 
+}
 
 @media(max-width:430px){
 
@@ -237,7 +241,7 @@ body{
         transition: 1s ease-in-out;
     }
 
-    .para-card {
+    .para-card-newsletter {
         text-align: center;
     }
 }
