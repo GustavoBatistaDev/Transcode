@@ -814,7 +814,7 @@
         </p>
         <div class="container-form">
             <form  action="" class="form" id="form">
-                <input type=" " placeholder="Endereço de email..." name="email" class="input">
+                <input placeholder="Endereço de email..." name="email" class="input">
                 <input autocomplete="off"  type="submit" value="Enviar" class="Budget-form">
             </form>
         </div>
@@ -912,9 +912,9 @@ const form = document.querySelector('#form');
     const email = document.querySelector('.input').value;
 
     try {
-        // Envolva o email em um objeto com uma propriedade específica
         const data = { email_destination: email };
-
+     
+        
         const response = await fetch("http://localhost:3000/send-email", {
         method: 'POST',
         headers: {
@@ -924,26 +924,43 @@ const form = document.querySelector('#form');
         body: JSON.stringify(data),
         });
 
-        const result = await response.json();
-        console.log('Resposta do servidor:', result);
-
+           
+        if(response.status === 400){
+            Toastify({
+                text: "Tente novamente.",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "linear-gradient(to right, #1242BE, #1242CD)",
+                },
+                }).showToast();
+                return;
+        }
+    
         Toastify({
-        text: "Email enviado.",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: "linear-gradient(to right, #1242BE, #1242CD)",
-        },
-        }).showToast();
-    } catch (error) {
-        console.error('Erro ao fazer a solicitação:', error.message);
-    } finally {
+            text: "Email enviado.",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #1242BE, #1242CD)",
+            },
+            }).showToast();
+        
         form.reset();
+    } catch (error) {
+        console.log(error.response)
+    } finally {
+        
     }
     };
 
