@@ -877,6 +877,11 @@ svg{
  animation: estrelaCadente 2s linear infinite; /* 5s de duração, linear timing, repetição infinita */
 }
 
+#cadente_3 {
+ animation: estrelaCadente 2.3s linear infinite; /* 5s de duração, linear timing, repetição infinita */
+}
+
+
 @media(max-width: 370px){
     .input{
         width: 190px;
