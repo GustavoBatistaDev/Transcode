@@ -851,7 +851,7 @@ svg{
 
 
 #piscar_3{
-    animation: pisca 7s infinite; /* Ajuste a duração conforme necessário */
+    animation: pisca 3s infinite; /* Ajuste a duração conforme necessário */
 }
 
 
