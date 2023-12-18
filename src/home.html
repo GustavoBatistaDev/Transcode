@@ -697,7 +697,7 @@
                    <img class="loading hidden" src="./img/Group 5241loading.png" alt="">
             </div>
         </div>
-        <section class="professional  trigger-x">
+        <section class="professional trigger-x">
             <div class="col-1-professional">
                 <h1 class="squad hidden"> <span class="gradient">Profissionais</span></h1>
                 <h1 class="title-professional hidden">
@@ -831,7 +831,104 @@
         </div>
     </section>
     <hr   style="width: 50%; display: flex; justify-content: center; margin: 0 auto;">
-    <section class="four  trigger-x">
+   
+
+    <section class="professional trigger-x">
+            <div class="col-1-professional trigger-x">
+                <h1 class="squad hidden"> <span class="gradient">FAQ</span></h1>
+                <h1 class="title-professional hidden">
+                    Você possui alguma dúvida?
+                </h1>
+              
+            </div>
+            <div class="col-2-professional  trigger-x">
+                <div class="faq-item">
+                    <h3  class="question" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center; ">
+                        <img class="check"  src="./img/acheck.svg" alt=""> &nbsp;
+                    Quais os benefícios de possuir um site?
+                    </span>
+                     <img class="more" src="./img/ax.svg" alt="">
+                    </h3>
+                    
+                <div class="answer">
+                <p>
+                    Seus Produtos e Serviços estarão disponíveis 24 horas por dia, 365 dias por ano para seus clientes e pessoas interessadas.
+                    Com maior visibilidade global para alcançar novos mercados.
+                    Melhora a imagem da sua marca, tornando-a mais profissional.
+                    Melhora a comunicação com seus clientes.
+                    Divulga melhor seus produtos e serviços.
+                </p>
+                </div>
+                </div>
+
+                <div class="faq-item" >
+                
+               <div>
+                 <h3  class="question" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center; ">
+                        <img class="check"  src="./img/acheck.svg" alt=""> &nbsp;
+                    Quais tipos de sites vocês desenvolvem?
+                    </span>
+                     <img class="more" src="./img/ax.svg" alt="">
+                    </h3>
+                <div class="answer">
+                <p>
+                   Construímos sistemas web, sites institucionais e landing pages com design UI envolvente. Integramos seus sites com APIs para uma funcionalidade aprimorada e implementamos Google Analytics para monitorar e otimizar o desempenho online. Vamos transformar suas ideias em realidade digital!
+                </p>
+               </div>
+                </div>
+                </div>
+                <div class="faq-item">
+                <h3  class="question" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center; ">
+                        <img class="check"  src="./img/acheck.svg" alt=""> &nbsp;
+                   Quanto tempo leva para desenvolver um site?
+                    </span>
+                     <img class="more" src="./img/ax.svg" alt="">
+                    </h3>
+                <div class="answer">
+                <p>
+                   O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Projetos simples podem levar algumas semanas, enquanto projetos mais complexos podem exigir meses. Entraremos em detalhes durante a consulta inicial.
+                </p>
+                </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3  class="question" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center; ">
+                    <img class="check"  src="./img/acheck.svg" alt=""> &nbsp;
+                        Quanto custa o desenvolvimento do site?
+                    </span>
+                    <img class="more" src="./img/ax.svg" alt="">
+                </h3>
+
+                <div class="answer">
+                    <p>
+                   Os custos variam dependendo do escopo do projeto, recursos necessários e funcionalidades desejadas. Após uma avaliação inicial, forneceremos um orçamento personalizado para o seu projeto.
+                    </p>
+                </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3  class="question" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center; ">
+                    <img class="check"  src="./img/acheck.svg" alt=""> &nbsp;
+                        Quanto custa manter um site no ar?
+                    </span>
+                    <img class="more" src="./img/ax.svg" alt="">
+                </h3>
+
+                <div class="answer">
+                    <p>
+                   Manter um site ativo é mais do que um custo, é um investimento estratégico. Os custos podem variar com base nas necessidades específicas do seu site, como hospedagem, atualizações de segurança e suporte técnico. Considere isso como um investimento contínuo na presença online da sua empresa, garantindo eficiência, segurança e uma experiência consistente para os visitantes.
+                    </p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+         <section class="four  trigger-x">
         
         <h1 style="text-align: center; "><span class="gradient hidden">Parcerias</span></h1>
         <h1 style="text-align: center; " class="title-section3 hidden">Vamos criar algo <span class="gradient"> incrível</span> ?</h1>
@@ -845,6 +942,10 @@
             </form>
         </div>
     </section>
+
+
+
+
     <footer class="footer">
          <div class="col-footer1">
              <img src="./img/Group 5243origi.svg" alt="">
@@ -993,6 +1094,40 @@ const form = document.querySelector('#form');
 form.addEventListener('submit', sendMail);
 
 
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach(function (question) {
+    question.addEventListener('click', function () {
+      const answer = this.nextElementSibling;
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+});
+
+const moreElements = document.querySelectorAll('.more');
+
+moreElements.forEach(more => {
+    let rotated = false;
+
+    more.addEventListener('click', () => {
+        rotated = !rotated; // Inverte o estado
+
+        if (rotated) {
+            more.style.transform = 'rotate(180deg)';
+        } else {
+            more.style.transform = 'rotate(45deg)';
+        }
+    });
+});
 </script>
 </body>
 

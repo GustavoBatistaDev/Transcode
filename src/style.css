@@ -897,6 +897,34 @@ svg{
 }
 
 
+.faq-item {
+  margin-bottom: 20px;
+  overflow: hidden; /* Garante que o conteúdo interno não ultrapasse o contêiner */
+  border-bottom: 1px solid #62adf821;
+}
+
+.question {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
 
 
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; /* Adicione uma transição suave na altura */
+  margin-top: 10px;
+  color: darkgray;
+  position: relative;
+}
+
+.more{
+    transform: rotate(45deg);
+    height: 20px;
+    transition: ease .4s;
+}
 
