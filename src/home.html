@@ -1097,37 +1097,56 @@ form.addEventListener('submit', sendMail);
 </script>
 
 <script>
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const questions = document.querySelectorAll('.question');
 
   questions.forEach(function (question) {
+    const moreIcon = question.querySelector('.more');
+    const answer = question.nextElementSibling;
+
     question.addEventListener('click', function () {
-      const answer = this.nextElementSibling;
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        rotateIcon(moreIcon, false);
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        rotateIcon(moreIcon, true);
+      }
+    });
+
+    moreIcon.addEventListener('click', function (event) {
+      event.stopPropagation();
+      const answer = question.nextElementSibling;
 
       if (answer.style.maxHeight) {
         answer.style.maxHeight = null;
+        rotateIcon(moreIcon, false);
       } else {
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        rotateIcon(moreIcon, true);
       }
     });
   });
+
+  function rotateIcon(element, rotate) {
+    if (rotate === undefined) {
+      rotate = !element.classList.contains('rotated');
+    }
+
+    if (rotate) {
+      element.style.transform = 'rotate(180deg)';
+    } else {
+      element.style.transform = 'rotate(45deg)';
+    }
+
+    // Alternar a classe rotated
+    element.classList.toggle('rotated', rotate);
+  }
 });
 
-const moreElements = document.querySelectorAll('.more');
 
-moreElements.forEach(more => {
-    let rotated = false;
-
-    more.addEventListener('click', () => {
-        rotated = !rotated; // Inverte o estado
-
-        if (rotated) {
-            more.style.transform = 'rotate(180deg)';
-        } else {
-            more.style.transform = 'rotate(45deg)';
-        }
-    });
-});
 </script>
 </body>
 
