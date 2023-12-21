@@ -30,7 +30,7 @@
                     <a class="nav-link" href="#services">Serviços</a>
                 </li>
                 <li class="nav-item">
-                     <button class="Budget-contact " style=" margin: 0 8px;">
+                     <button class="Budget-contact " >
                         WhatsApp
                     </button>   
                 </li>
@@ -1151,21 +1151,21 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const menuHamburguer = document.getElementById('menu-hamburguer');
-  const menuLinks = document.querySelector('.menu-links');
-  const bodyBefore = document.querySelector('body::before');
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuHamburguer = document.getElementById('menu-hamburguer');
+    const menuLinks = document.querySelector('.menu-links');
+    const bodyBefore = document.querySelector('body::before');
 
-  menuHamburguer.addEventListener('change', function () {
+    menuHamburguer.addEventListener('change', function () {
     document.body.classList.toggle('menu-open', menuHamburguer.checked);
-  });
+    });
 
-  menuLinks.addEventListener('click', function () {
+    menuLinks.addEventListener('click', function () {
     // Feche o menu ao clicar em um link
     menuHamburguer.checked = false;
     document.body.classList.remove('menu-open');
-  });
-});
+    });
+    });
 
 </script>
 </body>
