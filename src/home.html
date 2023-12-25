@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1HQW16FCX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-W1HQW16FCX');
+    </script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +52,7 @@
 
     <main id="main-intro" class="main-intro">  
     
-        <svg style="min-height:100vh;"  class="onee"  viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg   class="onee"  viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame 35">
             <g id="Elementos " clip-path="url(#clip0_89_762)">
             <rect width="1440" height="1024" fill="#000421"/>
@@ -294,7 +303,7 @@
             </clipPath>
             </defs>
         </svg>
-        <svg width="100%" class="twoo" height="1024" viewBox="0 0 480 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style="width: 100%;" class="twoo" height="1024" viewBox="0 0 480 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Frame 37" clip-path="url(#clip0_93_832)">
 <rect width="480" height="1024" fill="#000421"/>
 <g id="fumaca" filter="url(#filter0_f_93_832)">
@@ -506,7 +515,7 @@
    <section class="section-two" id="description">
 
     
-    <svg width="100%"  height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg  style="width: 100%;"  height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Elementos " clip-path="url(#clip0_94_749)">
 <rect width="1440" height="1024" fill="#000421"/>
 <g id="cadente">
@@ -598,7 +607,7 @@
    </div>
     <hr class="hidden"  style="width: 50%; display: flex; justify-content: center; margin: 0 auto;">
     <section id="services" class="section-three  trigger-x" >
-         <svg  height="1024"  width="100%" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <svg  height="1024"   style="width: 100%;"  viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Elementos " clip-path="url(#clip0_94_749)">
         <rect width="1440" height="1024" fill="#000421"/>
         <g id="cadente_2">
@@ -731,7 +740,7 @@
         </section>
     </section>
     <section class="four  trigger-x">
-            <svg width="100%" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg style="width: 100%;"  height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Elementos " clip-path="url(#clip0_94_749)">
             <rect width="1440" height="1024" fill="#000421"/>
             <g id="cadente">
@@ -1043,7 +1052,7 @@ const form = document.querySelector('#form');
         const data = { email_destination: email };
      
         
-        const response = await fetch("http://localhost:3000/send-email", {
+        const response = await fetch("http://localhost:3001 /send-email", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1052,7 +1061,6 @@ const form = document.querySelector('#form');
         body: JSON.stringify(data),
         });
 
-           
         if(response.status === 400){
             Toastify({
                 text: "Tente novamente.",
@@ -1093,7 +1101,6 @@ const form = document.querySelector('#form');
     };
 
 form.addEventListener('submit', sendMail);
-
 
 </script>
 

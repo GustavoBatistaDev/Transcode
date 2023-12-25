@@ -8,6 +8,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -42,6 +43,10 @@ html{
     display: flex;
     float: right;
     align-items: center;
+}
+
+svg{
+    max-width: 100%;
 }
 
 .bars{
