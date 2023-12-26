@@ -45,9 +45,7 @@ html{
     align-items: center;
 }
 
-svg{
-    max-width: 100%;
-}
+
 
 .bars{
     padding: 8px;
@@ -97,9 +95,7 @@ body{
      width: 110px !important;
    }
 
-    .logo{
-        
-    }
+
    
 }
 
@@ -862,7 +858,7 @@ a#logo {
 position: absolute;
     object-fit: cover;
     height: 100vh !important;
-  
+    min-height: 100vh !important;;
     margin: 0;
     padding: 0;
 
