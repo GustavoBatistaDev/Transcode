@@ -36,6 +36,7 @@ html{
     display: flex;
     justify-content: space-around;
     margin-top: 8px;
+    z-index: 299102;
 }
 
 
@@ -134,6 +135,7 @@ body{
     text-align: center;
     margin-bottom: 0px;
     padding: 0 16px;
+    z-index: 200000;
 }
 
 .main-para{
@@ -141,6 +143,7 @@ body{
     text-align: center;
     margin-bottom: 16px;
     padding: 0 8px;
+    z-index: 200000;
 }
 
 .container-content{
@@ -172,6 +175,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 200000;
 }
 
 .Budget-contact{
