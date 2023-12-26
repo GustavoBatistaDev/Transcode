@@ -1060,9 +1060,8 @@ const form = document.querySelector('#form');
 
     try {
         const data = { email_destination: email };
-     
-        
-        const response = await fetch("http://localhost:3001 /send-email", {
+    
+        const response = fetch("http://localhost:3001/send-email", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
