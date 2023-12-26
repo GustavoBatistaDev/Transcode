@@ -113,8 +113,7 @@ body{
 
 
 @media(max-width: 450px){
-    .onee{display: none;}
-.twoo{display: block;}
+   
 
 }
 
@@ -136,7 +135,7 @@ body{
     font-family: 'Futurism', sans-serif;
     font-size: 120px;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     padding: 0 16px;
 }
 
