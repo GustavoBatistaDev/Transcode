@@ -6,14 +6,11 @@
     <meta name="description" content="Crie sites de alto impacto, landing pages e sites institucionais com nossa expertise. Transforme sua presença online.">
     <link rel="shortcut icon" href="./img/alogoo.svg" type="image/x-icon">
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Seu Título Aqui">
+    <meta property="og:title" content="ByteFuture">
     <meta property="og:description" content="Crie sites de alto impacto, landing pages e sites institucionais com nossa expertise. Transforme sua presença online.">
     <meta property="og:image" content="URL da imagem representativa">
     <meta property="og:url" content="URL da sua página">
     <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="caminho/do/seu/favicon.ico" type="image/x-icon">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
@@ -22,6 +19,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '348648654589461');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=348648654589461&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     
     <!-- Toastify CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -56,10 +71,7 @@
                 </li>
             </ul>
         </nav>
-
-        
     </header>
-
 
     <main id="main-intro" class="main-intro">  
 
@@ -497,11 +509,6 @@
     </defs>
     </svg>
 
-
-
-
-
-
     <div class="container-content ">
             <h1 class="main-title hidden trigger-top">ByteFuture</h1>
             <p class="main-para hidden">
@@ -509,9 +516,13 @@
                 Sites de alto impacto para conversões eficazes.  
             </p> 
             <a style="z-index: 292929929;" target="_blank" href="https://wa.me/5573981241191">
-                <button class="Budget hidden">
-                Solicitar Orçamento
-                </button>   
+        
+                <button class="Budget hidden"  id="CompleteRegistration">Solicitar Orçamento</button>
+                <script type="text/javascript">
+                $('#CompleteRegistration').click(function() {
+                    fbq('track', 'CompleteRegistration');
+                });
+                </script> 
             </a>
     </div>
     </main>
