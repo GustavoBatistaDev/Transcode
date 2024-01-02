@@ -247,6 +247,8 @@ body{
         text-align: center;
         font-size: 13px;
         padding: 0 32px;
+        margin-bottom: -4px;
+        margin-top: 4px;
     }
 
     .Budget{
