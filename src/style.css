@@ -144,7 +144,8 @@ body{
 .main-para{
     color: darkgray;
     text-align: center;
-    margin-bottom: 16px;
+    margin-top: -4px;
+    margin-bottom: 8px;
     padding: 0 8px;
     z-index: 200000;
 }
